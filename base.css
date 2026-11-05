@@ -1,0 +1,129 @@
+:root {
+    --ink: #1e3a52;
+    --paper: #eef6fc;
+    --card: #fff;
+    --line: #8f99a0;
+    --muted: #4f6a80;
+    --accent: #4a9fe0;
+    --accent-d: #2b78b8;
+    --soft: #dcecf9;
+    --soft2: #e8f3fb;
+    --red: #e5646a;
+    --r: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font: 15px/1.5 Arial, Helvetica, sans-serif;
+    background: var(--paper);
+    color: var(--ink)
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    color: var(--ink);
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid #9cc3e4;
+    background: #fff;
+    color: var(--ink);
+    border-radius: 6px;
+    padding: 7px 14px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: var(--soft);
+    border-color: var(--accent-d);
+    color: var(--ink);
+}
+
+button:active {
+    background: #c4defa;
+    color: var(--ink);
+}
+
+button.primary {
+    background: var(--accent-d);
+    border-color: var(--accent-d);
+    color: #fff;
+}
+
+button.primary:hover,
+button.primary:active {
+    background: #1f5f96;
+    border-color: #1f5f96;
+    color: #fff;
+}
+
+button.ghost {
+    border-color: transparent;
+    background: none;
+    color: var(--muted);
+    font-weight: normal;
+}
+
+button.ghost:hover {
+    background: var(--soft);
+    color: var(--ink);
+}
+
+input,
+select,
+textarea {
+    border: 1px solid #9cc3e4;
+    border-radius: 6px;
+    padding: 6px 8px;
+    background: #fff;
+    width: 100%;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    margin: 10px 0 3px;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+dialog {
+    border: 0;
+    border-radius: var(--r);
+    padding: 20px;
+    width: min(380px, 92vw);
+    box-shadow: 0 12px 40px #1e3a5233;
+}
+
+dialog::backdrop {
+    background: #1e3a5255;
+}
+
+.row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.page {
+    padding: 20px;
+    height: 100vh;
+    overflow: auto;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 0 0 14px;
+}

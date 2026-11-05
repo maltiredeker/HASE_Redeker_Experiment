@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Time App</title>
+  <link rel="stylesheet" href="css/base.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 0 20px;
+      background: #d4eafb;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink);
+      height: 54px;
+      flex: none
+    }
+
+    header b {
+      font-size: 18px;
+      letter-spacing: .2px
+    }
+
+    nav {
+      display: flex;
+      gap: 4px;
+      height: 100%
+    }
+
+    nav a {
+      display: flex;
+      align-items: center;
+      padding: 0 18px;
+      font-weight: bold;
+      color: #34506a;
+      text-decoration: none;
+      border-bottom: 3px solid transparent
+    }
+
+    nav a:hover {
+      color: var(--ink)
+    }
+
+    nav a.active {
+      color: var(--ink);
+      font-weight: 600;
+      border-color: var(--accent)
+    }
+
+    iframe {
+      flex: 1;
+      border: 0;
+      width: 100%
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <b>Time App</b>
+    <!-- To remove a feature: delete its <a> line below and its file in /features -->
+    <nav id="tabs">
+      <a href="features/planner/planner.html" target="view">Planner</a>
+      <a href="features/kanban/kanban.html" target="view">Kanban</a>
+      <a href="features/pomodoro/pomodoro.html" target="view">Pomodoro Timer</a>
+    </nav>
+  </header>
+  <iframe name="view" title="Feature view"></iframe>
+  <script>
+    const links = [...document.querySelectorAll('#tabs a')];
+    const frame = document.querySelector('iframe');
+    function show(a) { links.forEach(l => l.classList.toggle('active', l === a)); frame.src = a.getAttribute('href'); }
+    links.forEach(a => a.addEventListener('click', e => { e.preventDefault(); show(a); }));
+    if (links[0]) show(links[0]); else frame.srcdoc = '<p style="font:16px sans-serif;padding:24px">No features installed.</p>';
+  </script>
+</body>
+
+</html>
