@@ -1,0 +1,115 @@
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.board {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    overflow-x: auto;
+    padding: 12px;              /* was padding-bottom only, so columns touched the frame */
+    border: 2px solid #5b9bd1;
+    border-radius: var(--r);
+    background: #fff;           /* white behind the columns so they stand out */
+}
+
+.col {
+    flex: 0 0 280px;
+    background: var(--soft);
+    border-radius: var(--r);
+    padding: 10px;
+    min-height: 120px;
+    border: 2px solid #7fb0da;
+}
+
+.col.over {
+    outline: 2px dashed var(--accent);
+    background: #cbe3f6;
+}
+
+.col-h {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.col-h input {
+    font-weight: 600;
+    background: transparent;
+    border-color: transparent;
+    padding: 4px;
+}
+
+.col-h input:focus {
+    background: #fff;
+    border-color: var(--line);
+}
+
+.count {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.card {
+    background: var(--card);
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 8px;
+    border: 2px solid #5b9bd1;
+    cursor: grab;
+    box-shadow: 0 1px 3px #1e3a5222;
+}
+
+.card.dragging {
+    opacity: .4;
+}
+
+.card.High {
+    border-color: #e5646a;
+}
+
+.card.Medium {
+    border-color: #f2b84b;
+}
+
+.card.Low {
+    border-color: #7cc9a8;
+}
+
+.card h3 {
+    margin: 0 0 2px;
+    font-size: 15px;
+}
+
+.card p {
+    margin: 0 0 6px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+.overdue {
+    color: var(--red);
+    font-weight: 600;
+}
+
+.card select {
+    font-size: 13px;
+    padding: 4px 6px;
+}
+
+.card .del {
+    float: right;
+    padding: 0 6px;
+}
